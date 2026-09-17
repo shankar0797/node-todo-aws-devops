@@ -1,0 +1,17 @@
+<form
+    action="/todo/edit/<%= todoIdx %>"
+    method="POST">
+
+    <input
+        type="text"
+        name="editTodo"
+        value="<%= todo %>"
+        required
+    />
+
+    <input
+        type="submit"
+        value="Update"
+    />
+
+</form>

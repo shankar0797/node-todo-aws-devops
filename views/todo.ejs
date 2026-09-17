@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AWS DevOps Todo App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background: #4CAF50;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .delete {
+            float: right;
+            color: red;
+            margin-left: 15px;
+        }
+
+        .edit {
+            float: right;
+            color: #d99a00;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>AWS DevOps Todo Application</h1>
+
+<div class="container">
+
+    <ul>
+        <% todolist.forEach(function(todo, index) { %>
+
+            <li>
+                <%= todo %>
+
+                <a
+                    href="/todo/delete/<%= index %>"
+                    class="delete">
+                    Delete
+                </a>
+
+                <a
+                    href="/todo/<%= index %>"
+                    class="edit">
+                    Edit
+                </a>
+            </li>
+
+        <% }); %>
+    </ul>
+
+    <form action="/todo/add/" method="post">
+
+        <label for="newtodo">
+            What should I do?
+        </label>
+
+        <input
+            type="text"
+            name="newtodo"
+            id="newtodo"
+            required
+            autofocus
+        />
+
+        <input
+            type="submit"
+            value="Add"
+        />
+
+    </form>
+
+</div>
+
+</body>
+</html>
