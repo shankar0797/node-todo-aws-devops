@@ -12,6 +12,7 @@ Monitoring and logging are implemented using Amazon CloudWatch.
 
 ## 🏗️ Architecture
 
+![AWS Architecture](docs/architecture.png)
 
 
 ### Architecture Flow
